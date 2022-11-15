@@ -1,6 +1,10 @@
 # gitlab-tools
 对GitLab做一些批量创建和删除的自动化工具
 
+## python library
+库名: python-gitlab
+官方文档: https://python-gitlab.readthedocs.io/en/stable/
+
 ## 功能概述
 以下功能皆可实现批量操作：
 

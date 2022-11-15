@@ -39,8 +39,8 @@ class GitLabTools(object):
         """创建gitlab subgroup"""
         all_groups_list = []
         all_groups = self.client.groups.list(get_all=True)
-        for groupName in all_groups:
-            all_groups_list.append(groupName.name)
+        for group_name in all_groups:
+            all_groups_list.append(group_name.name)
 
         for subgroup in self.config['create_subgroup_infos']:
             subgroup_name = subgroup['name']

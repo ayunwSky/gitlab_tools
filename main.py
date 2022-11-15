@@ -30,8 +30,8 @@ class GitLabTools(object):
             print(f"连接gitlab失败,正在尝试重新连接..., message: {e}")
             self.client = gitlab.Gitlab(url=self.git_url, private_token=self.git_token, timeout=3)
 
-        with open('./src/config/gitlab_config.yaml', 'r', encoding='utf-8') as f:
-            config_data = yaml.safe_load_all(f)
+        with open('./src/config/gitlab_config.yaml', 'r', encoding='utf-8') as configFile:
+            config_data = yaml.safe_load_all(configFile)
             for config in config_data:
                 self.config = config
 
@@ -168,8 +168,8 @@ class GitLabTools(object):
 
 
 if __name__ == "__main__":
-    with open("./src/config/gitlab_config.yaml", 'r', encoding='utf-8') as yaml_file:
-        data = yaml.safe_load_all(yaml_file)
+    with open("./src/config/gitlab_config.yaml", 'r', encoding='utf-8') as configFile:
+        data = yaml.safe_load_all(configFile)
         for conf in data:
             git_url = conf["gitlab_infos"]["gitlab_url"]
             git_token = conf["gitlab_infos"]["gitlab_token"]

@@ -1,0 +1,19 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+stages:
+  - build
+
+build:
+  stage: build
+  image: registry.xoo.icu/paas/images/python3-basic:5-vfb11ff13
+  tags:
+    - default
+  before_script:
+    - pip install -r src/requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+  script:
+    - cd src
+    # - sleep 100000000000000000
+    - python3 main.py
+  only:
+    - master

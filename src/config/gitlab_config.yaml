@@ -1,0 +1,56 @@
+# gitlab的相关配置
+gitlab_infos:
+  # example: "https://gitlab.xoo.xo"
+  gitlab_url: "paste your gitlab url"
+  # example: https://gitlab.xoo.xo/api/v4/projects/
+  gitlab_project_api: "paste your gitlab project api"
+  # example: https://gitlab.xoo.xo/api/v4/groups/
+  gitlab_group_api: "paste your gitlab group api"
+  gitlab_token: "paste your gitlab token"
+  # gitlab中顶级组的组ID，每个组都有一个唯一的组ID
+  group_id: "246"
+
+
+# gitlab 创建项目所需要的公共配置
+group_info_public:
+  - default_branch_protection: 2
+    visibility: "private"
+    project_creation_level: "maintainer"
+    subgroup_creation_level: "owner"
+
+
+# 本次需要创建的子组信息
+# name表示子组名称, path表示子组路径, parent_id表示子组所属的父组的group_id, description表示子组的描述信息
+create_subgroup_infos:
+  - name: "ayunw"
+    path: "ayunw"
+    parent_id: 767
+    description: "第一个测试组ayunw"
+  - name: "allen"
+    path: "allen"
+    parent_id: 767
+    description: "第二个测试组allen"
+
+
+# 本次需要被创建的项目名和项目的描述信息
+create_project_infos:
+  - name: "ayunw-project"
+    description: "ayunw服务"
+  - name: "allen-project"
+    "description": "allen服务"
+
+
+# 本次需要被删除的项目id,需要先去gitlab找到要删除的project的id.这里的name是个摆设，主要作用是id.
+del_project_infos:
+  - name: "ayunw-project"
+    id: 2230
+  - name: "allen-project"
+    id: 2231
+
+
+# 本次需要被删除的组id,需要先去gitlab找到要删除的group的id.这里的name是个摆设，主要作用是id.
+del_group_infos:
+  - name: "ayunw"
+    id: 776
+  - name: "allen"
+    id: 777

@@ -97,7 +97,7 @@ LOGGING_DIC = {
             'class': 'logging.handlers.RotatingFileHandler',
             'formatter': 'standard',
             'filename': ACCESS_LOGFILE,
-            'maxBytes': 1024 * 1024 * 200,
+            'maxBytes': 1024 * 1024 * 200,  # 200MB
             'backupCount': 10,
             'encoding': 'utf-8',
         },

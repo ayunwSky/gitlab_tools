@@ -9,7 +9,14 @@
 import yaml
 import httpx
 import gitlab
+from logging import config, getLogger
 
+from src.config import settings
+
+
+# 加载配置
+config.dictConfig(settings.LOGGING_DIC)
+logger = getLogger("console_log")
 
 class GitLabTools(object):
     """调用GitLab API 进行批量操作"""
@@ -25,9 +32,11 @@ class GitLabTools(object):
 
         try:
             self.client = gitlab.Gitlab(url=self.git_url, private_token=self.git_token, timeout=3)
-            print("连接gitlab成功...")
+            # print("连接gitlab成功...")
+            logger.info("连接gitlab成功...")
         except Exception as e:
-            print(f"连接gitlab失败,正在尝试重新连接..., message: {e}")
+            # print(f"连接gitlab失败,正在尝试重新连接..., message: {e}")
+            logger.info(f"连接gitlab失败,正在尝试重新连接..., message: {e}")
             self.client = gitlab.Gitlab(url=self.git_url, private_token=self.git_token, timeout=3)
 
         with open('./src/config/config.yaml', 'r', encoding='utf-8') as configFile:
@@ -98,7 +107,8 @@ class GitLabTools(object):
 
             try:
                 projects_create_resp = self.client.projects.create(payload)
-                print(f'create project: {projects_create_resp.name} successfully!')
+                # print(f'create project: {projects_create_resp.name} successfully!')
+                logger.info(f'create project: {projects_create_resp.name} successfully!')
             except Exception as e:
                 print(e)
 

@@ -28,3 +28,10 @@ https://github.com/python-gitlab/python-gitlab/pull/2374/commits/6bf25a8766558de
 ```
 
 后续功能 包括不限于：自动勾选流水线必须成功以及commit规范的hooks钩子,这两项功能目前有待开发...
+
+## 日志字典配置参考
+```shell
+https://www.cnblogs.com/hello-/articles/11605103.html
+https://blog.51cto.com/u_13691477/4756422
+```
+

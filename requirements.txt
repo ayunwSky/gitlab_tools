@@ -1,3 +1,4 @@
 PyYAML==6.0
 httpx==0.23.0
 python-gitlab==3.11.0
+python-dotenv==0.21.0

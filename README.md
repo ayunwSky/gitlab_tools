@@ -1,4 +1,4 @@
-# gitlab-tools
+# gitlab_tools
 对GitLab做一些批量创建和删除的自动化工具
 
 ## 本次使用到的 Python 库
